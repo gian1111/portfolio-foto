@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const imagesDir = path.join(__dirname, 'images');
+const imagesDir = path.join(__dirname, 'images-optimized');
 if (!fs.existsSync(imagesDir)) {
-  console.error('Create the images/ folder and put your photos there.');
+  console.error('Create the images-optimized/ folder and put your photos there.');
   process.exit(1);
 }
 
@@ -18,10 +18,10 @@ const out = files.map(f => {
   const name = path.parse(f).name.replace(/[-_]/g, ' ');
   const alt = escapeHtml(name);
   return `<figure class="masonry-item">
-  <img src="images/${encodeURI(f)}"
+  <img src="images-optimized/${encodeURI(f)}"
        alt="${alt}"
        loading="lazy"
-       data-full="images/${encodeURI(f)}" />
+       data-full="images-optimized/${encodeURI(f)}" />
   <figcaption>${alt}</figcaption>
 </figure>`;
 });

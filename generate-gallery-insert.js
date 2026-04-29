@@ -31,7 +31,7 @@ const items = files.map(f => {
   <img src="images-optimized/${encodeURI(f)}"
        alt=""
        loading="lazy"
-       data-full="images/${encodeURI(f)}" />
+       data-full="images-optimized/${encodeURI(f)}" />
 </figure>`;
 }).join('\n\n');
 
