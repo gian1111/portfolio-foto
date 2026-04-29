@@ -2,11 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 const projectDir = __dirname;
-const imagesDir = path.join(projectDir, 'images');
+const imagesDir = path.join(projectDir, 'images-optimized');
 const indexFile = path.join(projectDir, 'index.html');
 
 if (!fs.existsSync(imagesDir)) {
-  console.error('Create the images/ folder and put your photos there.');
+  console.error('Create the images-optimized/ folder and put your photos there.');
   process.exit(1);
 }
 
@@ -28,7 +28,7 @@ if (files.length === 0) {
 
 const items = files.map(f => {
   return `<figure class="masonry-item">
-  <img src="images/${encodeURI(f)}"
+  <img src="images-optimized/${encodeURI(f)}"
        alt=""
        loading="lazy"
        data-full="images/${encodeURI(f)}" />
@@ -53,6 +53,7 @@ if (endIdx === -1) {
   console.error('Could not find the end of masonry div in index.html');
   process.exit(1);
 }
+
 
 const before = html.slice(0, startIdx + startTag.length);
 const after = html.slice(endIdx);
