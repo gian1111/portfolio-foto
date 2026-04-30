@@ -129,7 +129,7 @@ body{
 /* About */
 .about-section{padding:36px 0}
 .about-grid{
-  display:grid;
+  display:block;
   grid-template-columns: 1fr min(320px,35%);
   gap:18px;
   align-items:start;
@@ -137,7 +137,7 @@ body{
 }
 .about-text p{margin:0 0 12px;color:var(--muted);max-width:65ch}
 /* simplified skills removed for minimal layout */
-.about-photo img{display:block;width:100%;height:auto;max-width:320px;object-fit:cover;border-radius:8px}
+.about-photo img{display:block;width:60%;height:auto;max-width:80%;object-fit:cover;border-radius:8px}
 
 /* Contact */
 .contact-section{padding:36px 0}
